@@ -40,6 +40,11 @@ docker volume create n8n_data
 docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n
 ```
 
+Go to the web [n8n Dashboard](http://localhost:5678/home/workflows):
+
+![RAG perso](./assets/n8n-portal.png)
+
+
 ### Qdrant
 > Qdrant (read: quadrant) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and manage points—vectors with an additional payload Qdrant is tailored to extended filtering support. 
 
