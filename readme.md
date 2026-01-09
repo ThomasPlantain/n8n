@@ -56,9 +56,11 @@ docker run -p 6333:6333 -v qdrant_data:/qdrant/storage qdrant/qdrant
 
 ### Ollama
 
-
+![RAG perso](./assets/ollama-chat.png)
 
 ## RAG Workflow
+
+My RAG is composed in 2 workflows.
 
 ![RAG perso](./assets/n8n-RAG-Qdrant.png)
 
