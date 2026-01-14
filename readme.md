@@ -3,6 +3,8 @@
 - [RAG with n8n](#rag-with-n8n)
   - [Overview](#overview)
   - [Before you start](#before-you-start)
+    - [What's RAG](#whats-rag)
+    - [What's you need](#whats-you-need)
   - [Installation](#installation)
     - [n8n](#n8n)
     - [Qdrant](#qdrant)
@@ -11,15 +13,26 @@
     - [Data ingestion](#data-ingestion)
     - [Chatbot](#chatbot)
   - [See also](#see-also)
+    - [SML (Small Language Model)](#sml-small-language-model)
+    - [Links](#links)
 
 
 ## Overview
 
 This guide explains how to implement a RAG (Retrieval Augmented Generation) on your laptop.
 
-![nvidia RAG](./assets/RAG.png)
+- Embedded AI
+- Data sovereignty
 
 ## Before you start
+
+### What's RAG
+
+> RAG (retrieval augmented generation) is a technology that improves the responses of generative AI models by feeding them with knowledge from internal databases.
+
+![nvidia RAG](./assets/RAG.png)
+
+### What's you need
 
 Before you put the RAG in place, ensure you already have:
 
@@ -31,6 +44,7 @@ Before you put the RAG in place, ensure you already have:
 
 
 ### n8n
+
 > n8n is a workflow automation platform that gives technical teams the flexibility of code with the speed of no-code.
 
 **Run locally**
@@ -46,6 +60,7 @@ Go to the web [n8n Dashboard](http://localhost:5678/home/workflows):
 
 
 ### Qdrant
+
 > Qdrant (read: quadrant) is a vector similarity search engine and vector database. It provides a production-ready service with a convenient API to store, search, and manage points—vectors with an additional payload Qdrant is tailored to extended filtering support. 
 
 **Run localy**
@@ -61,22 +76,35 @@ docker run -p 6333:6333 -v qdrant_data:/qdrant/storage qdrant/qdrant
 
 ### Ollama
 
+> Ollama is the easiest way to get up and running with large language models such as gpt-oss, Gemma 3, DeepSeek-R1, Qwen3 and more.
+
+
 ![RAG perso](./assets/ollama-chat.png)
+
+
 
 ## RAG Workflow
 
-My RAG is composed in 2 workflows.
+The RAG is composed in 2 workflows.
 
 ![RAG perso](./assets/n8n-RAG-Qdrant.png)
 
 ### Data ingestion
 
+![RAG perso](./assets/rag-data.png)
 
 ### Chatbot
 
-
+![RAG perso](./assets/rag-chatbot.png)
 
 ## See also
+
+### SML (Small Language Model)
+
+> Small language models, on the other hand, use far fewer parameters, typically ranging from a few thousand to a few hundred million. This make them more feasible to train and host in resource-constrained environments such as a single computer or even a mobile device.
+
+
+### Links
 
 * [n8n link](https://github.com/n8n-io/n8n)
 * [qdrant link](https://github.com/qdrant/qdrant)
