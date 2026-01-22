@@ -11,6 +11,7 @@
     - [Ollama](#ollama)
   - [RAG Workflow](#rag-workflow)
     - [Data ingestion](#data-ingestion)
+      - [Qdrant collections](#qdrant-collections)
     - [Chatbot](#chatbot)
   - [See also](#see-also)
     - [SML (Small Language Model)](#sml-small-language-model)
@@ -93,9 +94,42 @@ The RAG is composed in 2 workflows.
 
 ![RAG perso](./assets/rag-data.png)
 
+It starts with the file submission trigger, to upload CVs (in markdown format).
+
+We add Qdrant connector to store the files in the vector database. We need an embed model to split the files into vectors.
+
+![Qdrant connector](./assets/qdrant-config.png)
+
+- Emebed model: mxbai-embed-large
+
+![Qdrant embedding](./assets/qdrant-embed.png)
+
+#### Qdrant collections
+
+When the Data Ingestion workflow is executed, you can go to Qdrant dashboard to see the collections.
+
+![Qdrant embedding](./assets/qdrant-collection.png)
+
 ### Chatbot
 
+> Now the CVs are in the Qdrant vector database, we can chat to request some informations about the candidate.
+
 ![RAG perso](./assets/rag-chatbot.png)
+
+We start with the Chat trigger connected to an AI agent, with Qwen3 model.
+
+![Qwen3](./assets/agent-qwen.png)
+
+We create the tool to be able to search in our Qdrant collection and we had a simple prompt.
+
+![HR prompt](./assets/hr-prompt.png)
+
+:fire: And finaly we test our chat by asking informations about a candidate.
+We can see that the agent called qdrant to retrieve the data and generate a nice answer.
+
+![chat](./assets/chat-exec.png)
+
+
 
 ## See also
 
@@ -107,5 +141,5 @@ The RAG is composed in 2 workflows.
 ### Links
 
 * [n8n link](https://github.com/n8n-io/n8n)
-* [qdrant link](https://github.com/qdrant/qdrant)
-* [Ollama](https://github.com/ollama/ollama)
+* [Qdrant link](https://github.com/qdrant/qdrant)
+* [Ollama link](https://github.com/ollama/ollama)
