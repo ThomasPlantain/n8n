@@ -39,7 +39,7 @@ Before you put the RAG in place, ensure you already have:
 
 * Docker
 * Ollama
-* pdf files
+* md files
 
 ## Installation
 
