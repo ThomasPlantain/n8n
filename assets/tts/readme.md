@@ -4,8 +4,17 @@
 
 > Technology that enables text to be converted into speech sounds imitative of the human voice.
 
+**My idea**
+
+![Kokoro web ui](./img/n8n-design.jpg)
 
 ### Run locally
+
+- Kokoro
+- Ollama
+- n8n
+
+**Kokoro with FastAPI**
 
 * https://github.com/remsky/Kokoro-FastAPI
 
